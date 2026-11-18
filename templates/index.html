@@ -216,7 +216,7 @@
 									<tr><th scope="col">Horario</th><th scope="col">Lunes</th><th scope="col">Martes</th><th scope="col">Miércoles</th><th scope="col">Jueves</th><th scope="col">Viernes</th></tr>
 								</thead>
 								<tbody>
-									{foreach $RESERVAS as $reserva}
+									{foreach $CLASES as $reserva}
 										<tr><th scope="row">{$reserva.desde}-{$reserva.hasta}</th><td>{$reserva.lunes}</td><td>{$reserva.martes}</td><td>{$reserva.miercoles}</td><td>{$reserva.jueves}</td><td>{$reserva.viernes}</td></tr>
 									{/foreach}
 								</tbody>

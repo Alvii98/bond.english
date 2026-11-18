@@ -11,16 +11,18 @@ switch($page){
     case 'inicio':
         $smarty->assign('ANIO', date('Y'));
         $smarty->assign('CANT_ANIO', (date('Y')-2019));
-        $smarty->assign('RESERVAS', datos::reservas());
-        $smarty->assign('VALORES', datos::valores());
-        $smarty->assign('VALOR_HORA', datos::valores()[0]['valor']);
-        $smarty->assign('VALOR_CHARLA', datos::valores()[1]['valor']);
+        $smarty->assign('CLASES', datos::clases());
+        $valores = datos::valores();
+        $smarty->assign('VALORES', $valores);
+        $smarty->assign('VALOR_HORA', $valores[0]['valor']);
+        $smarty->assign('VALOR_CHARLA', $valores[1]['valor']);
         $smarty->display('index.html');
         break;
     case 'inscripciones':
         $smarty->assign('ANIO', date('Y'));
-        $smarty->assign('RESERVAS', datos::reservas());
+        $smarty->assign('CLASES', datos::clases_totales());
         $smarty->assign('VALORES', datos::valores());
+        $smarty->assign('NIVELES', datos::niveles());
         $smarty->display('inscripciones.html');
         break;
     case 'productos':

@@ -23,127 +23,125 @@
 					<h1>Empezá tu camino en <em>inglés.</em></h1>
 					<p>Completá tus datos y contanos sobre tu experiencia, tus objetivos y el curso que te interesa.</p>
 				</div>
-				<form class="bond-registration-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeoVMjVuhReu6GGSIxY9Wibbu_efMwtwcfXeWnpP4lSAHN3PQ/viewform" method="get" data-registration-form>
-					<input type="hidden" name="usp" value="pp_url" />
+				<form class="bond-registration-form">
 					<div class="bond-registration-grid">
 						<div class="bond-registration-field">
-							<label for="registration-email">Correo electrónico <span class="bond-registration-required" aria-hidden="true">*</span></label>
-							<input id="registration-email" type="email" name="emailAddress" autocomplete="email" required />
+							<label for="nombre">Nombre y Apellido <span class="bond-registration-required" aria-hidden="true">*</span></label>
+							<input id="nombre" type="text" autocomplete="name" required />
 						</div>
 						<div class="bond-registration-field">
-							<label for="registration-name">Nombre y Apellido <span class="bond-registration-required" aria-hidden="true">*</span></label>
-							<input id="registration-name" type="text" name="entry.1130189161" autocomplete="name" required />
+							<label for="dni">DNI <span class="bond-registration-required" aria-hidden="true">*</span></label>
+							<input id="dni" type="number" autocomplete="document" required />
+						</div>						
+						<div class="bond-registration-field">
+							<label for="edad">Edad <span class="bond-registration-required" aria-hidden="true">*</span></label>
+							<input id="edad" type="number" min="1" step="1" inputmode="numeric" required />
 						</div>
 						<div class="bond-registration-field">
-							<label for="registration-age">Edad <span class="bond-registration-required" aria-hidden="true">*</span></label>
-							<input id="registration-age" type="number" name="entry.165139075" min="1" step="1" inputmode="numeric" required />
+							<label for="correo">Correo electrónico <span class="bond-registration-required" aria-hidden="true">*</span></label>
+							<input id="correo" type="email" autocomplete="email" required />
+						</div>						
+						<div class="bond-registration-field">
+							<label for="telefono">Número de teléfono <span class="bond-registration-required" aria-hidden="true">*</span></label>
+							<input id="telefono" type="tel" autocomplete="tel" required />
 						</div>
 						<div class="bond-registration-field">
-							<label for="registration-phone">Número de teléfono <span class="bond-registration-required" aria-hidden="true">*</span></label>
-							<input id="registration-phone" type="tel" name="entry.1125736596" autocomplete="tel" required />
+							<label for="lugar">Lugar de residencia <span class="bond-registration-required" aria-hidden="true">*</span></label>
+							<input id="lugar" type="text" autocomplete="address-line1" required />
+						</div>
+						<div class="bond-registration-field">
+							<label>Nivel de inglés <span class="bond-registration-required" aria-hidden="true">*</span></label>
+							<div class="bond-registration-select-wrap">
+								<select class="bond-registration-select" id="nivel" required>
+									<option value="" disabled selected>Seleccioná tu nivel</option>
+									{foreach $NIVELES as $nivel}
+										<option value="{$nivel.id}">{$nivel.nivel}</option>
+									{/foreach}
+								</select>
+							</div>
 						</div>
 					</div>
-
-					<fieldset class="bond-registration-group" data-required-group aria-describedby="registration-residence-error">
-                        <div class="bond-registration-field">
-							<label for="registration-residence">Lugar de residencia <span class="bond-registration-required" aria-hidden="true">*</span></label>
-							<input id="registration-residence" type="text" name="entry.834928953" autocomplete="address-line1" required />
-						</div>
-					</fieldset>
-
-					<fieldset class="bond-registration-group" data-required-group aria-describedby="registration-level-error">
-						<legend>Nivel de inglés <span class="bond-registration-required" aria-hidden="true">*</span></legend>
-						<div class="bond-registration-select-wrap">
-							<select class="bond-registration-select" name="entry.1595853115" id="registration-level-select" required>
-								<option value="" disabled selected>Seleccioná tu nivel</option>
-								<option value="Básico">Básico</option>
-								<option value="Pre intermedio">Pre- intermedio</option>
-								<option value="Intermedio">Intermedio</option>
-								<option value="Intermedio alto">Intermedio- alto</option>
-								<option value="Avanzado">Avanzado</option>
-								<option value="No tengo conocimientos previos">No tengo conocimientos previos</option>
-							</select>
-						</div>
-					</fieldset>
-
 					<div class="bond-registration-field">
-						<label for="registration-studies">Estudios previos de inglés <span class="bond-registration-required" aria-hidden="true">*</span></label>
-						<textarea id="registration-studies" name="entry.343528388" aria-describedby="registration-studies-help" required></textarea>
+						<label for="estudio-previo">Estudios previos de inglés <span class="bond-registration-required" aria-hidden="true">*</span></label>
+						<textarea id="estudio-previo" required></textarea>
 						<p class="bond-registration-help" id="registration-studies-help">Si estudiaste antes, contanos cuánto hace y por cuánto tiempo. Si no, indicá que no tenés estudios previos.</p>
 					</div>
 					<div class="bond-registration-field">
-						<label for="registration-goal">¿Cuál es tu objetivo? <span class="bond-registration-required" aria-hidden="true">*</span></label>
-						<textarea id="registration-goal" name="entry.141382225" required></textarea>
+						<label for="objetivo">¿Cuál es tu objetivo? <span class="bond-registration-required" aria-hidden="true">*</span></label>
+						<textarea id="objetivo" required></textarea>
 					</div>
 
 					<fieldset class="bond-registration-group" data-required-group aria-describedby="registration-course-error">
 						<legend>¿Qué tipo de curso te interesa? <span class="bond-registration-required" aria-hidden="true">*</span></legend>
 						<div class="bond-registration-select-wrap">
-							<select class="bond-registration-select" name="entry.1595853115" id="registration-level-select" required>
+							<select class="bond-registration-select" id="valor" required>
 								<option value="" disabled selected>Seleccioná tu curso</option>
 								{foreach $VALORES as $valor}
 									<option value="Básico">{$valor.descripcion} - {$valor.valor}</option>
 								{/foreach}
 							</select>
 						</div>
-						<p class="bond-registration-group-error" id="registration-course-error" data-group-error hidden>Elegí al menos un tipo de curso.</p>
 					</fieldset>
 
 					<fieldset class="bond-registration-group" data-required-group aria-describedby="registration-days-error">
 						<legend>Disponibilidad horaria <span class="bond-registration-required" aria-hidden="true">*</span></legend>
 						<p class="bond-registration-help">Elegí uno o más turnos que esten disponibles. <small class="bond-registration-help phone">Desplaza en horizontal para ver todos los días y horarios.</small></p>
 						<div class="bond-registration-days-scroll" role="region" aria-label="Horarios disponibles por día" tabindex="0">
-							<div class="bond-registration-days-grid">
+							<div class="bond-registration-days-grid" id="checkbox-horarios">
 								<div class="bond-registration-day-column">
 									<h3>Lunes</h3>
 									<div class="bond-registration-day-slots">
-										{foreach $RESERVAS as $reserva}
-											<label><input type="checkbox" value="Lunes {$reserva.desde}-{$reserva.hasta}" {if $reserva.lunes != 'Disponible'}disabled="true"{/if} />{$reserva.desde}-{$reserva.hasta}</label>
+										{foreach $CLASES as $clase}
+											{if $clase.dia != 1} {continue} {/if}
+											<label><input type="checkbox" value="{$clase.id}" {if $clase.estado != 'Disponible'}disabled="true"{/if} />{$clase.desde}-{$clase.hasta}</label>
 										{/foreach}
 									</div>
 								</div>
 								<div class="bond-registration-day-column">
 									<h3>Martes</h3>
 									<div class="bond-registration-day-slots">
-										{foreach $RESERVAS as $reserva}
-											<label><input type="checkbox" value="Martes {$reserva.desde}-{$reserva.hasta}" {if $reserva.martes != 'Disponible'}disabled="true"{/if} />{$reserva.desde}-{$reserva.hasta}</label>
+										{foreach $CLASES as $clase}
+											{if $clase.dia != 2} {continue} {/if}
+											<label><input type="checkbox" value="{$clase.id}" {if $clase.estado != 'Disponible'}disabled="true"{/if} />{$clase.desde}-{$clase.hasta}</label>
 										{/foreach}
 									</div>
 								</div>
 								<div class="bond-registration-day-column">
 									<h3>Miércoles</h3>
 									<div class="bond-registration-day-slots">
-										{foreach $RESERVAS as $reserva}
-											<label><input type="checkbox" value="Miércoles {$reserva.desde}-{$reserva.hasta}" {if $reserva.miercoles != 'Disponible'}disabled="true"{/if} />{$reserva.desde}-{$reserva.hasta}</label>
+										{foreach $CLASES as $clase}
+											{if $clase.dia != 3} {continue} {/if}
+											<label><input type="checkbox" value="{$clase.id}" {if $clase.estado != 'Disponible'}disabled="true"{/if} />{$clase.desde}-{$clase.hasta}</label>
 										{/foreach}
 									</div>
 								</div>
 								<div class="bond-registration-day-column">
 									<h3>Jueves</h3>
 									<div class="bond-registration-day-slots">
-										{foreach $RESERVAS as $reserva}
-											<label><input type="checkbox" value="Jueves {$reserva.desde}-{$reserva.hasta}" {if $reserva.jueves != 'Disponible'}disabled="true"{/if} />{$reserva.desde}-{$reserva.hasta}</label>
+										{foreach $CLASES as $clase}
+											{if $clase.dia != 4} {continue} {/if}
+											<label><input type="checkbox" value="{$clase.id}" {if $clase.estado != 'Disponible'}disabled="true"{/if} />{$clase.desde}-{$clase.hasta}</label>
 										{/foreach}
 									</div>
 								</div>
 								<div class="bond-registration-day-column">
 									<h3>Viernes</h3>
 									<div class="bond-registration-day-slots">
-										{foreach $RESERVAS as $reserva}
-											<label><input type="checkbox" value="Viernes {$reserva.desde}-{$reserva.hasta}" {if $reserva.viernes != 'Disponible'}disabled="true"{/if} />{$reserva.desde}-{$reserva.hasta}</label>
+										{foreach $CLASES as $clase}
+											{if $clase.dia != 5} {continue} {/if}
+											<label><input type="checkbox" value="{$clase.id}" {if $clase.estado != 'Disponible'}disabled="true"{/if} />{$clase.desde}-{$clase.hasta}</label>
 										{/foreach}
 									</div>
 								</div>
 							</div>
 						</div>
-						<p class="bond-registration-group-error" id="registration-days-error" data-group-error hidden>Elegí al menos un día.</p>
 					</fieldset>
 					<div class="bond-registration-field">
-						<label for="registration-hours">Detalle de preferencia de horarios <span class="bond-registration-required" aria-hidden="true">*</span></label>
-						<textarea id="registration-hours" name="entry.490313253" required></textarea>
+						<label for="preferencia-horario">Detalle de preferencia de horarios <span class="bond-registration-required" aria-hidden="true">*</span></label>
+						<textarea id="preferencia-horario" required></textarea>
 					</div>
 					<div class="bond-registration-submit">
-						<button class="bond-button bond-button-light" type="submit"><i class="bi bi-floppy"></i> Guardar inscripción</button>
+						<button disabled="true" class="bond-button bond-button-light" type="button"><i class="bi bi-floppy"></i> Guardar inscripción</button>
 					</div>
 				</form>
 			</section>
