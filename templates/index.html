@@ -5,12 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Bond English: clases de inglés personalizadas, online y para todas las edades. Cursos regulares, conversación y preparación de exámenes." />
 	<title>Bond English | Clases de inglés online</title>
-	<link rel="icon" type="image/svg+xml" href="/bond.english/img/favicon.svg" />
+	<link rel="icon" type="image/svg+xml" href="/bond.english/img/favicon.svg?{$NO_CACHE}" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;600;700&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="/bond.english/css/estilos.css?{$NO_CACHE}" />
+	<script src="/bond.english/js/funciones.js?{$NO_CACHE}"></script>
 </head>
 <body>
 	{$HEADER}
@@ -22,19 +23,19 @@
 					<h1>El inglés que te acerca a <em>tus metas.</em></h1>
 					<p class="bond-hero-intro">Aprendé inglés a tu ritmo, con clases dinámicas y un plan pensado para vos. Para todas las edades y todos los niveles.</p>
 					<div class="bond-hero-actions">
-						<a class="bond-button" href="https://wa.me/5492345510178" target="_blank" rel="noopener noreferrer">Coordiná una entrevista <span aria-hidden="true">↗</span></a>
-						<a class="bond-text-link" href="#cursos">Conocé los cursos <span aria-hidden="true">↓</span></a>
+						<a class="bond-button" href="/bond.english/inscripciones/">Inscribite ahora <span aria-hidden="true"><i class="bi bi-clipboard-check"></i></span></a>
+						<a class="bond-button" href="#cursos">Conocé los cursos <span aria-hidden="true"><i class="bi bi-arrow-down"></i></span></a>
 					</div>
 					<div class="bond-proof">
-						<span class="bond-proof-mark" aria-hidden="true">7+</span>
-						<span><strong>Más de 7 años</strong><br />de experiencia enseñando</span>
+						<span class="bond-proof-mark" aria-hidden="true">{$CANT_ANIO}+</span>
+						<span><strong>Más de {$CANT_ANIO} años</strong><br />de experiencia enseñando</span>
 					</div>
 				</div>
 				<div class="bond-hero-art" aria-label="Bond English, escuela de inglés">
 					<div class="bond-orbit bond-orbit-one"></div>
 					<div class="bond-orbit bond-orbit-two"></div>
 					<div class="bond-hero-card">
-						<span class="bond-card-top">WELCOME TO BOND</span>
+						<span class="bond-card-top">WELCOME TO BOND ENGLISH</span>
 						<span class="bond-card-word">English<br /><em>for you.</em></span>
 						<span class="bond-card-bottom">LEARN · GROW · CONNECT</span>
 					</div>
@@ -43,9 +44,9 @@
 			</section>
 
 			<section class="bond-facts" aria-label="Sobre Bond English">
-				<div><span class="bond-fact-icon" aria-hidden="true">✳</span><strong>Todas las edades</strong><span>Niños, adolescentes y adultos</span></div>
-				<div><span class="bond-fact-icon" aria-hidden="true">↗</span><strong>Todos los niveles</strong><span>Un recorrido a tu medida</span></div>
-				<div><span class="bond-fact-icon" aria-hidden="true">◎</span><strong>100% online</strong><span>Clases en vivo por Zoom</span></div>
+				<div><span class="bond-fact-icon" aria-hidden="true"><i class="bi bi-people"></i></span><strong>Todas las edades</strong><span>Niños, adolescentes y adultos</span></div>
+				<div><span class="bond-fact-icon" aria-hidden="true"><i class="bi bi-arrow-up"></i></span><strong>Todos los niveles</strong><span>Un recorrido a tu medida</span></div>
+				<div><span class="bond-fact-icon" aria-hidden="true"><i class="bi bi-camera-video"></i></span><strong>100% online</strong><span>Clases en vivo por Zoom</span></div>
 			</section>
 
 			<section class="bond-section bond-about" id="sobre-mi">
@@ -56,9 +57,12 @@
 					</div>
 					<div class="bond-about-copy">
 						<img class="bond-about-photo" src="/bond.english/img/leo.jpg" alt="Leonel de la Llera, profesor de inglés" />
-						<p>Soy Leonel de la Llera, Profesor en Lengua y Literatura Inglesas, graduado de la Universidad Nacional de La Plata (UNLP).</p>
+						<div class="bond-about-credentials">
+							<p>Soy Leonel de la Llera, Profesor en Lengua y Literatura Inglesas, graduado de la Universidad Nacional de La Plata (UNLP).</p>
+							<img class="bond-about-unlp" src="/bond.english/img/unlp.png" alt="Escudo de la Universidad Nacional de La Plata" />
+						</div>
 						<p>Viví más de un año en California y Massachusetts, Estados Unidos, donde perfeccioné mi inglés y enseñé español como becario Fulbright en Amherst College.</p>
-						<p>Fundé Bond English para ofrecer un espacio de enseñanza personalizada, con más de 7 años de experiencia en el dictado de clases.</p>
+						<p>Fundé Bond English para ofrecer un espacio de enseñanza personalizada, con más de {$CANT_ANIO} años de experiencia en el dictado de clases.</p>
 					</div>
 				</div>
 				<div class="bond-about-note"><span aria-hidden="true">“</span>Un espacio dedicado a la enseñanza personalizada del inglés.</div>
@@ -73,27 +77,73 @@
 				<div class="bond-course-grid">
 					<article class="bond-course-card">
 						<span class="bond-course-number">01 / KIDS</span>
-						<span class="bond-course-symbol" aria-hidden="true">✳</span>
 						<h3>Niños</h3>
 						<p>Un primer acercamiento al inglés con actividades dinámicas y adecuadas a su edad.</p>
+						<img class="bond-course-image" src="/bond.english/img/chico.jpg" alt="Niño aprendiendo inglés con una pizarra" loading="lazy" />
 					</article>
 					<article class="bond-course-card bond-course-card-featured">
 						<span class="bond-course-number">02 / TEENS</span>
-						<span class="bond-course-symbol" aria-hidden="true">↗</span>
 						<h3>Adolescentes</h3>
 						<p>Un espacio para ganar confianza, comunicarse y avanzar en el idioma.</p>
+						<img class="bond-course-image" src="/bond.english/img/adolescente.jpg" alt="Adolescentes estudiando en grupo" loading="lazy" />
 					</article>
 					<article class="bond-course-card">
 						<span class="bond-course-number">03 / ADULTS</span>
-						<span class="bond-course-symbol" aria-hidden="true">◎</span>
 						<h3>Adultos</h3>
 						<p>Inglés para tus proyectos, tus viajes, tu trabajo o simplemente por gusto.</p>
+						<img class="bond-course-image" src="/bond.english/img/adulto.jpg" alt="Adultos conversando durante una clase de inglés" loading="lazy" />
 					</article>
 				</div>
 				<div class="bond-offerings">
-					<div><span class="bond-offering-icon" aria-hidden="true">✦</span><p><strong>Exámenes internacionales</strong><br />Preparación para Cambridge (KET, PET, FCE, CAE) e IELTS.</p></div>
-					<div><span class="bond-offering-icon" aria-hidden="true">↔</span><p><strong>Conversación</strong><br />Practicá y desarrollá tu comunicación oral en inglés.</p></div>
-					<div><span class="bond-offering-icon" aria-hidden="true">⌁</span><p><strong>Inglés para viajeros</strong><br />Preparáte para comunicarte en tu próximo viaje.</p></div>
+					<div class="bond-offering-exams">
+						<div class="bond-offering-copy">
+							<span class="bond-offering-icon" aria-hidden="true"><i class="bi bi-globe-americas"></i></span>
+							<p><strong>Exámenes internacionales</strong><br/>Preparación para Cambridge (KET, PET, FCE, CAE) e IELTS.</p>
+						</div>
+						<img class="bond-exam-image2" src="/bond.english/img/examenes.png" />
+					</div>
+					<div class="bond-offering-exams">
+						<div class="bond-offering-copy">
+							<span class="bond-offering-icon" aria-hidden="true"><i class="bi bi-chat"></i></span>
+							<p><strong>Conversación</strong><br />Practicá y desarrollá tu comunicación oral en inglés.</p>
+						</div>
+						<img class="bond-exam-image2" src="/bond.english/img/conversacion.png" />
+					</div>
+					<div class="bond-offering-exams">
+						<div class="bond-offering-copy">
+							<span class="bond-offering-icon" aria-hidden="true"><i class="bi bi-luggage"></i></span>
+							<p><strong>Inglés para viajeros</strong><br />Preparáte para comunicarte en tu próximo viaje.</p>
+						</div>
+						<img class="bond-exam-image" src="/bond.english/img/viajero.png"  />
+					</div>
+					<div class="bond-offering-exams">
+						<div class="bond-offering-copy">
+							<span class="bond-offering-icon" aria-hidden="true"><i class="bi bi-building"></i></span>
+							<p><strong>Inglés para empresas</strong><br />Capacitación para equipos de trabajo, adaptada a los objetivos de cada organización.</p>
+						</div>
+						<img class="bond-exam-image3" src="/bond.english/img/empresa.jpg" alt="Equipo de trabajo en una capacitación empresarial" />
+					</div>
+				</div>
+				<div class="bond-course-event">
+					<img class="bond-course-event-image" src="/bond.english/img/cafe.webp" alt="Personas compartiendo café y pastelería alrededor de una mesa" loading="lazy" />
+					<div class="bond-course-event-copy">
+						<p class="bond-eyebrow">Bond English · La Plata</p>
+						<h3>The English Table</h3>
+						<p>Un encuentro informal en distintos cafés de La Plata para practicar inglés cotidiano, conocer gente y compartir una merienda. Conversaciones, juegos y devoluciones en un ambiente relajado; no reemplaza una clase regular.</p>
+					</div>
+					<div class="bond-course-event-details">
+						<div class="bond-course-event-facts">
+							<div><span>CUÁNDO</span><strong>Un sábado al mes, por la tarde</strong></div>
+							<div><span>DURACIÓN</span><strong>90 minutos</strong></div>
+							<div><span>GRUPO</span><strong>5 o 6 participantes</strong></div>
+							<div><span>INCLUYE</span><strong>Una bebida y algo de pastelería</strong></div>
+							<div><span>VALOR</span><strong>{$VALOR_CHARLA}</strong></div>
+						</div>
+						<div class="bond-course-event-footer">
+							<p>Inscripción previa requerida. El pago anticipado reserva tu lugar.</p>
+							<a class="bond-button bond-button-light" href="https://wa.me/5492345510178" target="_blank" rel="noopener noreferrer">Consultá y reservá <span aria-hidden="true"><i class="bi bi-whatsapp"></i></span></a>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -104,7 +154,7 @@
 						<p class="bond-eyebrow">Una experiencia a tu medida</p>
 						<h2>Aprendé haciendo, hablando y <em>conectando.</em></h2>
 						<p>Las clases son dinámicas, flexibles y planificadas según tu nivel y tus necesidades. Trabajamos con un enfoque comunicativo, haciendo hincapié en la producción oral y en las cuatro habilidades.</p>
-						<div class="bond-online-badge"><span aria-hidden="true">◎</span><span><strong>100% online</strong><br />Clases en vivo por Zoom</span></div>
+						<div class="bond-online-badge"><span aria-hidden="true"><i class="bi bi-camera-video"></i></span><span><strong>100% online</strong><br />Clases en vivo por Zoom</span></div>
 					</div>
 					<div class="bond-method-details">
 						<div><span>01</span><h3>Speaking</h3><p>Practicá la expresión oral en cada encuentro.</p></div>
@@ -115,33 +165,34 @@
 					</div>
 				</div>
 				<div class="bond-guideline-grid">
-					<article><span aria-hidden="true">◷</span><h3>Puntualidad</h3><p>Asistir a las clases correspondientes al curso de forma puntual.</p></article>
-					<article><span aria-hidden="true">✓</span><h3>Asistencia</h3><p>Te pedimos responsabilidad para asistir el día y horario acordados. No se recuperan clases, excepto por motivos de salud que impidan asistir.</p></article>
-					<article><span aria-hidden="true">↻</span><h3>Recuperaciones</h3><p>Si el docente se ausenta, se acuerda una recuperación. Las clases que coinciden con feriados también se recuperan en un horario a convenir.</p></article>
+					<article><span aria-hidden="true"><i class="bi bi-clock"></i></span><h3>Puntualidad</h3><p>Asistir a las clases correspondientes al curso de forma puntual.</p></article>
+					<article><span aria-hidden="true"><i class="bi bi-check-circle"></i></span><h3>Asistencia</h3><p>Te pedimos responsabilidad para asistir el día y horario acordados. No se recuperan clases, excepto por motivos de salud que impidan asistir.</p></article>
+					<article><span aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span><h3>Recuperaciones</h3><p>Si el docente se ausenta, se acuerda una recuperación. Las clases que coinciden con feriados también se recuperan en un horario a convenir.</p></article>
 				</div>
 			</section>
 
 			<section class="bond-section bond-pricing" id="aranceles">
 				<div class="bond-section-label"><span>04</span> INVERSIÓN</div>
 				<div class="bond-section-heading">
-					<div><p class="bond-eyebrow">Aranceles 2026</p><h2>Elegí la carga <em>horaria.</em></h2></div>
+					<div><p class="bond-eyebrow">Aranceles {$ANIO}</p><h2>Elegí la carga <em>horaria.</em></h2></div>
 					<p>Los cursos regulares se abonan en cuotas mensuales de 4 clases.</p>
 				</div>
 				<div class="bond-price-table-wrap">
 					<table class="bond-price-table">
-						<thead><tr><th scope="col">Curso regular individual</th><th scope="col">Clases al mes</th><th scope="col">Cuota mensual</th></tr></thead>
+						<thead><tr><th scope="col">Clases al mes</th><th scope="col">Cuota mensual</th></tr></thead>
 						<tbody>
-							<tr><th scope="row">Curso regular 1</th><td>4 clases de 1:00 hs</td><td>$140.000</td></tr>
-							<tr><th scope="row">Curso regular 2</th><td>4 clases de 1:15 hs</td><td>$175.000</td></tr>
-							<tr><th scope="row">Curso regular 3</th><td>4 clases de 1:30 hs</td><td>$198.000</td></tr>
+							{foreach $VALORES as $valor}
+								{if $valor.orden != 3}{continue}{/if}
+								<tr><td>{$valor.descripcion}</td><td>{$valor.valor}</td></tr>
+							{/foreach}
 						</tbody>
 					</table>
 				</div>
 				<div class="bond-price-extra">
-					<p><span>CLASE INDIVIDUAL</span><strong>$35.000 <small>por hora</small></strong></p>
+					<p><span>CLASE INDIVIDUAL</span><strong>{$VALOR_HORA} <small>por hora</small></strong></p>
 					<p><span>CLASES DÚO Y GRUPALES</span><strong>Consultar arancel</strong></p>
 				</div>
-				<div class="bond-payment-note"><span aria-hidden="true">ⓘ</span><p>Los pagos se realizan del 1 al 10 de cada mes. Consultá los medios de pago disponibles al coordinar tu entrevista.</p></div>
+				<div class="bond-payment-note"><span aria-hidden="true"><i class="bi bi-exclamation-circle"></i></span><p>Los pagos se realizan del 1 al 10 de cada mes. Consultá los medios de pago disponibles al coordinar tu entrevista.</p></div>
 			</section>
 
 			<section class="bond-section bond-enrollment" id="inscripciones">
@@ -153,7 +204,10 @@
 				<div class="bond-enrollment-grid">
 					<div class="bond-schedule-card">
 						<div class="bond-schedule-heading">
-							<div><h3>Disponibilidad semanal</h3><p>Turnos entre las 13:00 y las 20:00</p></div>
+							<div><h3>Disponibilidad semanal</h3>
+								<p class="bond-registration-help">Turnos entre las 13:00 y las 20:00. 
+								<small class="bond-registration-help phone">Desplazate en horizontal para ver todos los días y horarios que esten disponibles.</small></p>
+							</div>
 							<span class="bond-duration-badge">60 <small>MIN</small></span>
 						</div>
 						<div class="bond-schedule-scroll">
@@ -162,37 +216,87 @@
 									<tr><th scope="col">Horario</th><th scope="col">Lunes</th><th scope="col">Martes</th><th scope="col">Miércoles</th><th scope="col">Jueves</th><th scope="col">Viernes</th></tr>
 								</thead>
 								<tbody>
-									<tr><th scope="row">13:00–14:00</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-									<tr><th scope="row">14:00–15:00</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-									<tr><th scope="row">15:00–16:00</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-									<tr><th scope="row">16:00–17:00</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-									<tr><th scope="row">17:00–18:00</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-									<tr><th scope="row">18:00–19:00</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-									<tr><th scope="row">19:00–20:00</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+									{foreach $RESERVAS as $reserva}
+										<tr><th scope="row">{$reserva.desde}-{$reserva.hasta}</th><td>{$reserva.lunes}</td><td>{$reserva.martes}</td><td>{$reserva.miercoles}</td><td>{$reserva.jueves}</td><td>{$reserva.viernes}</td></tr>
+									{/foreach}
 								</tbody>
 							</table>
 						</div>
-						<p class="bond-schedule-note">Los espacios libres se van a indicar en esta grilla. Cada turno corresponde a una clase de una hora.</p>
+						<p class="bond-schedule-note">Los horarios libres se van a indicar en esta grilla. Cada turno corresponde a una clase de una hora.</p>
 					</div>
 					<aside class="bond-enrollment-card">
 						<span class="bond-enrollment-kicker">TU PRÓXIMO PASO</span>
 						<h3>¿Encontraste tu horario?</h3>
 						<p>Elegí un espacio disponible y completá el formulario para iniciar tu inscripción.</p>
-						<a class="bond-button bond-button-light" href="https://docs.google.com/forms/d/e/1FAIpQLSeoVMjVuhReu6GGSIxY9Wibbu_efMwtwcfXeWnpP4lSAHN3PQ/viewform" target="_blank" rel="noopener noreferrer">Ir al formulario <span aria-hidden="true">↓</span></a>
-						<div class="bond-form-placeholder" id="formulario-inscripcion">
-							<strong>Formulario de inscripción</strong>
-							<span>Este espacio queda reservado para agregar el formulario.</span>
-						</div>
+						<a class="bond-button bond-button-light" href="/bond.english/inscripciones/">Ir al formulario <span aria-hidden="true"><i class="bi bi-clipboard-check"></i></span></a>
 					</aside>
 				</div>
 			</section>
-		</main>
 
-		<!-- <footer class="bond-footer">
-			<a class="bond-brand" href="#inicio"><img src="/bond.english/img/icono.webp" alt="" /><span>Bond English</span></a>
-			<p>Bond English · School of English</p>
-			<a href="https://wa.me/5492345510178" target="_blank" rel="noopener noreferrer">Hablemos por WhatsApp <span aria-hidden="true">↗</span></a>
-		</footer> -->
+			<section class="bond-section bond-store" id="tienda">
+				<div class="bond-section-label"><span>06</span> TIENDA</div>
+				<div class="bond-store-card">
+					<div class="bond-store-copy">
+						<p class="bond-eyebrow">Materiales para seguir aprendiendo</p>
+						<h2>Libros y videos para <em>practicar a tu ritmo.</em></h2>
+						<p>Encontrá libros y videos de clases para repasar lo aprendido y seguir practicando inglés cuando quieras.</p>
+						<a class="bond-button bond-button-light" href="/tienda/">Conocé la tienda <span aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span></a>
+					</div>
+					<div class="bond-store-visual" aria-hidden="true">
+						<span class="bond-store-icon"><i class="bi bi-book-half"></i></span>
+						<span class="bond-store-icon bond-store-icon-video"><i class="bi bi-play-circle-fill"></i></span>
+					</div>
+				</div>
+			</section>
+
+			<section class="bond-section bond-reviews" id="resenas">
+				<div class="bond-section-label"><span>07</span> RESEÑAS</div>
+				<div class="bond-section-heading">
+					<div><p class="bond-eyebrow">Experiencias de estudiantes</p><h2>Lo que dicen de <em>Bond English.</em></h2></div>
+					<p>Un espacio para compartir la foto, el nombre, la reseña y la valoración de cada estudiante.</p>
+				</div>
+				<div class="bond-reviews-grid">
+					<article class="bond-review-card">
+						<div class="bond-review-photo-placeholder" aria-hidden="true">
+							<i class="bi bi-person-circle"></i>
+							<span>Foto</span>
+						</div>
+						<div class="bond-review-content">
+							<div class="bond-review-rating">
+								<span aria-hidden="true">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</span>
+							</div>
+							<h3>Nombre del estudiante</h3>
+							<p>La reseña se agregará aquí.</p>
+						</div>
+					</article>
+					<article class="bond-review-card">
+						<div class="bond-review-photo-placeholder" aria-hidden="true">
+							<i class="bi bi-person-circle"></i>
+							<span>Foto</span>
+						</div>
+						<div class="bond-review-content">
+							<div class="bond-review-rating">
+								<span aria-hidden="true">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</span>
+							</div>
+							<h3>Nombre del estudiante</h3>
+							<p>La reseña se agregará aquí.</p>
+						</div>
+					</article>
+				</div>
+			</section>
+		</main>
 	</div>
 	{$FOOTER}
 </body>
